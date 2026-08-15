@@ -52,7 +52,7 @@
           }
         }
       },
-  "preset": "recommended",
+      "preset": "recommended",
       "security": {
         "noDangerouslySetInnerHtml": "off"
       }
