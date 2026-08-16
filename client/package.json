@@ -27,6 +27,7 @@
   "packageManager": "pnpm@11.21.0",
   "private": true,
   "scripts": {
+    "biome": "npx @biomejs/biome check --write && npx @biomejs/biome format --write && npx @biomejs/biome lint --write",
     "biome-check": "npx @biomejs/biome check --write",
     "biome-format": "npx @biomejs/biome format --write",
     "biome-lint": "npx @biomejs/biome lint --write",
