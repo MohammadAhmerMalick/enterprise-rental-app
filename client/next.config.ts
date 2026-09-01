@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
         port: '',
         protocol: 'https',
       },
+      {
+        hostname: 'sheltos-react-sooty.vercel.app',
+        pathname: '/**',
+        port: '',
+        protocol: 'https',
+      },
     ],
   },
 }
