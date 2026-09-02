@@ -2,101 +2,41 @@
 
 import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import type { Swiper as SwiperType } from 'swiper/types'
 import PropertyCard from '@/components/elements/PropertyCard'
 
 import 'swiper/css'
-import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import propertiesData from '@/data/propertiesData'
 
-const properties = [
-  {
-    baths: 2,
-    beds: 2,
-    description:
-      'Elegant retreat in a quiet Coral Gables setting. This home provides wonderful entertaining spaces with a chef kitchen opening...',
-    href: '/',
-    images: [
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/4.jpg',
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/5.jpg',
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/7.jpg',
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/6.jpg',
-    ],
-    listedAt: '2022-06-20',
-    location: 'France',
-    price: 6558,
-    sqft: 7000,
-    status: 'sale' as const,
-    title: "Allen's Across Way",
-  },
-  {
-    baths: 3,
-    beds: 3,
-    description:
-      'Connected residences might be owned by a single entity or owned separately with an agreement covering the relationship between units.',
-    href: '/',
-    images: [
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/5.jpg',
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/1.jpg',
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/3.jpg',
-    ],
-    listedAt: '2022-08-12',
-    location: 'Dubai',
-    price: 8420,
-    sqft: 4200,
-    status: 'sale' as const,
-    title: 'Marina Gate Residence',
-  },
-  {
-    baths: 4,
-    beds: 5,
-    description:
-      'Different types of housing can use the same physical type. This home provides wonderful entertaining spaces with a chef kitchen.',
-    href: '/',
-    images: [
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/7.jpg',
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/2.jpg',
-    ],
-    listedAt: '2023-01-04',
-    location: 'Abu Dhabi',
-    price: 9554,
-    sqft: 5000,
-    status: 'rent' as const,
-    title: 'Merrick in Spring Way',
-  },
-  {
-    baths: 2,
-    beds: 1,
-    description:
-      'A bright apartment with open living areas, a modern kitchen, and easy access to waterfront walks and cafes.',
-    href: '/',
-    images: [
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/1.jpg',
-      'https://sheltos-react-sooty.vercel.app/assets/images/feature/4.jpg',
-    ],
-    listedAt: '2022-11-18',
-    location: 'Sharjah',
-    price: 4120,
-    sqft: 1800,
-    status: 'rent' as const,
-    title: 'Al Khan Studio Loft',
-  },
-]
+const pagination = { clickable: true }
+const modules = [Pagination]
+const breakpoints = {
+  0: { slidesPerView: 1 },
+  768: { slidesPerView: 2 },
+  1200: { slidesPerView: 3 },
+}
 
-const PropertySliderUnit = () => {
+interface PropertySliderUnitProps {
+  onSwiper: (swiper: SwiperType) => void
+}
+
+const PropertySliderUnit = ({ onSwiper }: PropertySliderUnitProps) => {
   return (
     <Swiper
-      navigation
-      pagination={{ clickable: true }}
-      modules={[Pagination]}
-      autoplay={{ delay: 2500 }}
+      breakpoints={breakpoints}
+      modules={modules}
+      onFromEdge={onSwiper}
+      onLock={onSwiper}
+      onResize={onSwiper}
+      onSlideChange={onSwiper}
+      onSwiper={onSwiper}
+      onUnlock={onSwiper}
+      pagination={pagination}
       spaceBetween={20}
-      breakpoints={{
-        0: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1200: { slidesPerView: 3 },
-      }}
+      watchOverflow
     >
-      {properties.map((property) => (
+      {propertiesData.map((property) => (
         <SwiperSlide key={property.title}>
           <PropertyCard {...property} className="mb-16" />
         </SwiperSlide>
