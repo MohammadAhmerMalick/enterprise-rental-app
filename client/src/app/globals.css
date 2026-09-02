@@ -131,6 +131,11 @@
     @apply font-sans;
   }
 }
+/* ------------------------------ Swiper ------------------------------ */
+
+:root {
+  --swiper-navigation-size: 30px !important;
+}
 
 /* Swiper pagination */
 .swiper-pagination-bullet {
@@ -139,4 +144,18 @@
 
 .swiper-pagination-bullet-active {
   @apply bg-primary! shadow shadow-primary/50; /* active */
+}
+
+.swiper-navigation-icon {
+  @apply text-white;
+  filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 5px black);
+}
+
+/* ------------------------------ shadcn/ui ------------------------------ */
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
