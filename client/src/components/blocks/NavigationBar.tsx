@@ -21,6 +21,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Container } from '@/components/ui/container'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -45,7 +46,7 @@ import { cn } from '@/lib/utils'
 export default function NavigationBar() {
   return (
     <div className="relative w-full border-neutral-200 border-b bg-white dark:border-neutral-800 dark:bg-neutral-950 [&_a]:no-underline">
-      <div className="mx-auto flex h-17 max-w-7xl items-center justify-between px-6">
+      <Container className="mx-auto flex h-17 items-center justify-between">
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
             <div className="flex h-10 items-center justify-center text-primary dark:text-primary">
@@ -343,7 +344,7 @@ export default function NavigationBar() {
             </Sheet>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   )
 }

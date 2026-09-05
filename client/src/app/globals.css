@@ -133,8 +133,8 @@
 }
 /* ------------------------------ Swiper ------------------------------ */
 
-:root {
-  --swiper-navigation-size: 30px !important;
+:root .swiper {
+  --swiper-navigation-size: 30px;
 }
 
 /* Swiper pagination */
