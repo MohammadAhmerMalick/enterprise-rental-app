@@ -3,11 +3,12 @@
 import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import FeaturedCard from '@/components/elements/FeaturedCard'
+import { Container } from '@/components/ui/container'
+import HeadingUnit from '@/components/unit/HeadingUnit'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import { Container } from '@/components/ui/container'
 
 const cities = [
   { image: 4, name: 'Abu Dhabi' },
@@ -22,6 +23,14 @@ const cities = [
 const CitiesSliderBlock = () => {
   return (
     <Container>
+      <HeadingUnit
+        as="h2"
+        layout="split"
+        className="mb-10"
+        eyebrow="Locations"
+        heading="Explore featured cities"
+        paragraph="From waterfront living in Dubai to heritage neighborhoods in Sharjah, find the city that matches your next move."
+      />
       <Swiper
         navigation
         pagination={{ clickable: true }}

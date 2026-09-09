@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import './globals.css'
+import Providers from '@/app/providers'
 import NavigationBar from '@/components/blocks/NavigationBar'
-import Providers from './providers'
+
+import './globals.css'
 
 const roboto = Roboto({
   display: 'swap',
